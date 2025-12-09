@@ -24,6 +24,24 @@ function Heading({ data }) {
 
 // Professional summery
 
+function ProfessionalSummary({data}){
+    return(
+        <div>
+                <section>
+                   <div className="bg-amber-500 m-3 p-1.5 text-center font-bold">
+                       <p className="text-gray-600">
+                        PROFESSIONAL SUMMARY
+                        </p> 
+                   </div>
+                   <div className="m-3 p-1">
+                    {data.desc}
+                   </div>
+                </section>
+        </div>
+    )
+}
+
+
 export function ResumeOutput({ allData }) {
     return (
         <div>
@@ -33,6 +51,7 @@ export function ResumeOutput({ allData }) {
                 </div>
                 <Heading data={allData.person}></Heading>
                 <hr className="m-4"/>
+                <ProfessionalSummary data={allData.profession}></ProfessionalSummary>
             </div>
         </div>
     )

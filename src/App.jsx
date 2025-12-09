@@ -5,8 +5,8 @@ import { SideBar } from './SideBar'
 import { Navbar } from './component/NavBar';
 
 function App() {
-  const [person,setPerson] = useState({fullname:" ",email:" ",phone:"",location:""})
-  const [profession,setProfessionSummary] = useState({desc:" " })
+  const [person,setPerson] = useState({fullname:"Spider Basnet",email:"spider@test123",phone:"98161214",location:"jhapa nepal btm"})
+  const [profession,setProfessionSummary] = useState({desc:"I am a dedicated Computer Engineering student with a strong interest in software development, problem-solving, and emerging technologies. I enjoy learning how systems work—from hardware to high-level applications—and building projects that improve efficiency and user experience. I’m always eager to expand my skills, collaborate with others, and take on challenges that help me grow as an engineer." })
 
   const allData = {person ,profession};
   const setData = {setPerson,setProfessionSummary}
