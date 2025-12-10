@@ -9,14 +9,13 @@ export function Summary({data,setData}) {
         height:"h-100",
 }
 
-
     return (
         <div>
             {SummaryVision ?
                 <MainTheme visible={SummaryVision} setVisible={setSummary} label={summaryStatic.label} height={summaryStatic.height} >
                     <div>
                         <h1 className="font-mono m-1">Summary </h1>
-                        <textarea name="Text" id="" cols="35" rows="10" className=" border p-2" value={data.profession.desc}  onChange={(e) => setData.setProfessionSummary({...data.profession,desc:e.target.value})} ></textarea>
+                        <textarea name="Text" id="" cols="30" rows="10" className=" border p-2" value={data.profession.desc}  onChange={(e) => setData.setProfessionSummary({...data.profession,desc:e.target.value})} ></textarea>
                     </div>
                 </MainTheme> : <Theme visible={SummaryVision} setVisible={setSummary} label={summaryStatic.label}></Theme>
             }

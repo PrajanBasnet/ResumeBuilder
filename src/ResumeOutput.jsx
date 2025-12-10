@@ -1,3 +1,4 @@
+
 function Heading({ data }) {
     return (
         <div className="flex flex-wrap w-full justify-center ">
@@ -24,23 +25,39 @@ function Heading({ data }) {
 
 // Professional summery
 
-function ProfessionalSummary({data}){
-    return(
+function ProfessionalSummary({ data }) {
+    return (
         <div>
-                <section>
-                   <div className="bg-amber-500 m-3 p-1.5 text-center font-bold">
-                       <p className="text-gray-600">
+            <section>
+                <div className="bg-amber-500 m-3 p-1.5 text-center font-bold">
+                    <p className="text-gray-600">
                         PROFESSIONAL SUMMARY
-                        </p> 
-                   </div>
-                   <div className="m-3 p-1">
+                    </p>
+                </div>
+                <div className="m-3 p-1">
                     {data.desc}
-                   </div>
-                </section>
+                </div>
+            </section>
         </div>
     )
 }
 
+//  Skill Ul
+function SkillUi({ data }) {
+    return (
+        <div>
+            <section>
+                <ul>
+                        {
+                            data.allSkill.map((item,index) => (<li key={index}> {item}</li>))
+                        }
+                    
+    
+                </ul>
+            </section>
+        </div>
+    )
+}
 
 export function ResumeOutput({ allData }) {
     return (
@@ -50,8 +67,10 @@ export function ResumeOutput({ allData }) {
                     <p className="text-3xl font-bold text-center"> {allData.person.fullname}</p>
                 </div>
                 <Heading data={allData.person}></Heading>
-                <hr className="m-4"/>
+                <hr className="m-4" />
                 <ProfessionalSummary data={allData.profession}></ProfessionalSummary>
+                <SkillUi data={allData.skill}></SkillUi>
+
             </div>
         </div>
     )
