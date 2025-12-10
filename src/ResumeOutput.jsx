@@ -46,13 +46,19 @@ function ProfessionalSummary({ data }) {
 function SkillUi({ data }) {
     return (
         <div>
-            <section>
-                <ul>
-                        {
-                            data.allSkill.map((item,index) => (<li key={index}> {item}</li>))
-                        }
-                    
-    
+                  <div className="bg-amber-500 m-3 p-1 text-center font-bold">
+                    <p className="text-gray-600">
+                        Skill
+                    </p>
+                </div>
+            <section className=" h-40 p-2 m-3 overflow-hidden">
+                <ul className="columns-2  list-disc">
+
+                    {
+                        data.allSkill.map((item, index) => (<li className="list-disc ml-4 " key={index}> {item}</li>))
+                    }
+
+
                 </ul>
             </section>
         </div>
