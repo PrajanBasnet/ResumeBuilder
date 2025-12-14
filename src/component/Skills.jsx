@@ -2,12 +2,13 @@ import { useState } from "react"
 import { Input, MainTheme, Theme } from "./ThemeSide";
 
 export function Skill({ data, setData }) {
+
     const [skl, sklSkill] = useState(false);
     const skillStatic = {
         label: "Add Skills",
         height: "h-130",
     }
-    const dlt = (index) => {
+        const dlt = (index) => {
         const updated = data.skill.allSkill.filter((_, i) => i !== index);
         console.log(updated)
         setData.setSkill({ ...data.skill, allSkill: updated});
