@@ -6,11 +6,12 @@ export function Input({label,placeholder,type="text" ,cls="inpPrime" ,updatedVal
         </div>
     )
 }
-export function Theme({ label, visible, setVisible }) {
+export function Theme({ label, visible, setVisible, children }) {
     return (
         <div>
-            <section className="bg-white w-80 h-15 shadow-sm rounded m-2">
-                <div className="flex flex-wrap text-center justify-between  font-mono font-bold p-3">
+                  <section className="bg-white w-80 shadow-sm rounded m-2 overflow-hidden transition-all duration-300">
+                    <div className="flex flex-wrap text-center justify-between font-mono font-bold p-3">
+
                     <p className="ml-5 text-lg ">{label}</p>
                     <img src="../../public/arrow.svg" alt="Arrow" onClick={(e) => visible ? setVisible(false) : setVisible(true)} width="20px" />
                 </div>
@@ -19,17 +20,21 @@ export function Theme({ label, visible, setVisible }) {
     )
 }
 
-export function MainTheme({ label, visible, setVisible,children ,height }) {
+export function MainTheme({ label, visible, setVisible, children }) {
+
     return (
         <div>
-             <section className={`bg-white w-80 shadow-sm rounded m-2  ${height}`}>
+             <section className={`bg-white w-80 shadow-sm rounded m-2  `}>
                 <div className="flex flex-wrap text-center justify-between  font-mono font-bold p-3">
                     <p className="ml-5 text-lg">{label}</p>
                     <img src="../../public/arrow.svg" alt="Arrow" onClick={(e) => visible ? setVisible(false) : setVisible(true)} width="20px" />
                 </div>
-                 <div className="p-4">
-                {children}
-            </div>
+                                {visible && (
+                    <div className="p-4">
+                        {children}
+                    </div>
+                )}
+
             </section>
         </div>
     )

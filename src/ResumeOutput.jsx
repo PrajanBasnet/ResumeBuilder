@@ -86,9 +86,14 @@ export function Work({ data }) {
 
                                 <div className="flex flex-wrap">
                                     <p >{item.workstart}</p>
-                                        <span className="ml-3 mr-3">To</span>
+                                    <span className="ml-3 mr-3">To</span>
                                     <p>{item.workend}</p>
                                 </div>
+                            </div>
+                            <div className="text-yellow-700 font-bold flex flex-col">
+                                {item.position}
+                            <li>    {item.myDuty}</li>
+
                             </div>
 
                         </div>

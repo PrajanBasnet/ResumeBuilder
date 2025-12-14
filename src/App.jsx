@@ -10,14 +10,13 @@ function App() {
   const [skill, setSkill] = useState({ allSkill: [] });
   const [skillInput, setSkillInput] = useState({ myskill: '' });
 
+  const [exp,setExpAll] = useState({newExp:[{companyname:"" , workstart:"",workend:"",lct:"",position:""}]})
+  const [experiences, setExperiences] = useState({companyname: "", workstart: "", workend: "", lct:"" ,position:"",myDuty:[]});
 
-    const [exp,setExpAll] = useState({newExp:[{companyname:"" , workstart:"",workend:"",lct:""}]})
-    const [experiences, setExperiences] = useState({companyname: "", workstart: "", workend: "", lct:""},
-  );
+  const [dutyInput, setDutyInput] = useState("");
 
-
-    const allData = { person, profession, skill, skillInput, experiences ,exp};
-    const setData = { setPerson, setProfessionSummary, setSkill, setSkillInput, setExperiences ,setExpAll};
+    const allData = { person, profession, skill, skillInput, experiences ,exp,dutyInput};
+    const setData = { setPerson, setProfessionSummary, setSkill, setSkillInput, setExperiences ,setExpAll ,setDutyInput};
 
   return (
     <div>
