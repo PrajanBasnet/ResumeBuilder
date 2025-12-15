@@ -9,7 +9,6 @@ export function Personal({data,setData}) {
         height:"h-100",
 }
 
-
     return (
         <div>
             {PersonalVisual ?

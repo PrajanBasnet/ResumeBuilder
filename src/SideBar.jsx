@@ -1,3 +1,4 @@
+import { Education } from "./component/Education";
 import { Personal } from "./component/Personal";
 import { Skill } from "./component/Skills";
 import { Summary } from "./component/Summary";
@@ -11,6 +12,7 @@ export function SideBar({data,setData}){
                 <Summary data={data} setData={setData}></Summary>
                 <Skill data={data} setData={setData}> </Skill>
                 <Work data={data} setData={setData}> </Work>
+                <Education data={data} setData={setData}></Education>
         </div>
     )
 }

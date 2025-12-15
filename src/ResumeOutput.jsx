@@ -74,7 +74,7 @@ export function Work({ data }) {
                         Work Expirence
                     </p>
                 </div>
-                <section className=" h-40 p-2 m-3 overflow-hidden items-baseline">
+                <section className=" h-auto- p-2 m-3 overflow-hidden items-baseline">
                     {data.newExp.slice(1).map((item, index) => (
                         <div key={index}>
                             <div className="flex felx-wrap justify-between">
@@ -92,10 +92,16 @@ export function Work({ data }) {
                             </div>
                             <div className="text-yellow-700 font-bold flex flex-col">
                                 {item.position}
-                            <li>    {item.myDuty}</li>
 
                             </div>
+                                <div>
+                                    <ul class="list-disc pl-5">
 
+                                        {item.myDuty.map((vlue,valueIndex) =>
+                                            <li className="list-disc" key={valueIndex}>{vlue}</li>
+                                        )}
+                                        </ul>
+                                </div>
                         </div>
                     ))}
 
@@ -110,7 +116,7 @@ export function Work({ data }) {
 export function ResumeOutput({ allData }) {
     return (
         <div>
-            <div className="bg-white w-full max-w-4xl min-h-screen  m-3 p-3 rounded">
+            <div className="bg-white w-full h-auto max-w-4xl min-h-screen  m-3 p-3 rounded">
                 <div>
                     <p className="text-3xl font-bold text-center"> {allData.person.fullname}</p>
                 </div>

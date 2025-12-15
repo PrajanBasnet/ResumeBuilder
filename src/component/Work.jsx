@@ -20,7 +20,20 @@ export function Work({ data, setData }) {
         }
         setData.setDutyInput("");
     }
-
+    function dltItem(index) {
+        const updatedData = data.experiences.myDuty.filter((_, item) => item !== index);
+        setData.setExperiences({ ...data.experiences.myDuty, myDuty: updatedData })
+    }
+    function add() {
+        setData.setExpAll({
+            ...data.exp, newExp: [...(data.exp?.newExp || []),
+            {
+                companyname: data.experiences.companyname, workstart: data.experiences.workstart, workend: data.experiences.workend,
+                lct: data.experiences.lct, position: data.experiences.position, myDuty: data.experiences.myDuty
+            }]
+        })
+        setData.setExperiences({myDuty:[]})
+    }
     return (
         <div>
             {workVisible ?
@@ -47,7 +60,10 @@ export function Work({ data, setData }) {
                             <button type="button" className="border ml-3 font-mono w-16" onClick={handleAddDuty}>Add</button>
                             <div>
                                 {data.experiences?.myDuty?.map((item, index) => (
-                                    <li key={index}>{item}</li>
+                                    <div key={index}>
+                                        <li key={index}>{item} </li>
+                                        <button type="button" className="border bg-yellow-300 mt-3 " onClick={() => dltItem(index)}>Delete</button>
+                                    </div>
                                 ))}
                             </div>
 
@@ -61,14 +77,13 @@ export function Work({ data, setData }) {
                                     <hr />
                                     <label className="p-2" >End: </label>
                                     <input type="date" name="dates" id="dt" value={data.experiences.workend} onChange={(e) => setData.setExperiences({ ...data.experiences, workend: e.target.value })} />
-
                                 </div>
 
 
                             </div>
                         </div>
                         <br />
-                        <button type="submit" className="border p-3 mt-3  gap-1 hover:bg-yellow-300" onClick={(e) => setData.setExpAll({ ...data.exp, newExp: [...(data.exp?.newExp || []), { companyname: data.experiences.companyname, workstart: data.experiences.workstart, workend: data.experiences.workend, lct: data.experiences.lct, position: data.experiences.position, myDuty: data.experiences.myDuty }] })}>Submit</button>
+                        <button type="submit" className="border p-3 mt-3  gap-1 hover:bg-yellow-300" onClick={(e) => add()}>Submit</button>
                         <div className="flex flex-col space-y-2 border p-2 bg-white w-full">
 
                             {data.exp?.newExp?.map((item, index) => (
