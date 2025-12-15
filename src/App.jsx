@@ -10,13 +10,19 @@ function App() {
   const [skill, setSkill] = useState({ allSkill: [] });
   const [skillInput, setSkillInput] = useState({ myskill: '' });
 
-  const [exp,setExpAll] = useState({newExp:[{companyname:"" , workstart:"",workend:"",lct:"",position:""}]})
-  const [experiences, setExperiences] = useState({companyname: "", workstart: "", workend: "", lct:"" ,position:"",myDuty:[]});
+  const [exp, setExpAll] = useState({ newExp: [{ companyname: "", workstart: "", workend: "", lct: "", position: "" }] })
+  const [experiences, setExperiences] = useState({ companyname: "", workstart: "", workend: "", lct: "", position: "", myDuty: [] });
 
   const [dutyInput, setDutyInput] = useState("");
 
-    const allData = { person, profession, skill, skillInput, experiences ,exp,dutyInput};
-    const setData = { setPerson, setProfessionSummary, setSkill, setSkillInput, setExperiences ,setExpAll ,setDutyInput};
+  const [edu, setEduAll] = useState({ newEdu: [{ collagename: "", studyStart: "", studyEnd: "", location: "", course: "" }] })
+  const [education, setEducation] = useState({ collagename: "", studyStart: "", studyEnd: "", location: "", course: "", myEducation: [] });
+  const [educationInput, seteducationInput] = useState("");
+  const [img, setImg] = useState('');
+
+
+  const allData = { person, profession, skill, skillInput, experiences, exp, dutyInput, education, educationInput, edu ,img};
+  const setData = { setPerson, setProfessionSummary, setSkill, setSkillInput, setExperiences, setExpAll, setDutyInput, setEduAll, setEducation, seteducationInput, setImg};
 
   return (
     <div>

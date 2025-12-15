@@ -1,24 +1,32 @@
 
-function Heading({ data }) {
+function Heading({ data, ig }) {
     return (
-        <div className="flex flex-wrap w-full justify-center ">
+        <div>
+            <div className="flex flex-wrap w-full justify-center ">
+            <div className="flex items-center flex-wrap justify-center">
+                <img
+                    src={ig}
+                    alt="Preview"
+                    class="w-20 h-20 rounded-full object-cover aspect-square"
+                    />
+                    </div>
+                <div className="flex  items-center gap-2 px-2 py-2">
+                    <img src="./public/email.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
+                    <p className="font-serif text-xs text-gray-500">{data.email}</p>
+                </div>
 
-            <div className="flex  items-center gap-2 px-2 py-2">
-                <img src="./public/email.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
-                <p className="font-serif text-xs text-gray-500">{data.email}</p>
-            </div>
+                <div className="flex  items-center gap-2 px-2 py-2">
+                    <img src="./public/location.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
+                    <p className="font-semibold text-xs text-gray-500">
+                        {data.phone}
+                    </p>
+                </div>
+                <div className="flex  items-center gap-2 px-2 py-2">
+                    <img src="./public/location.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
+                    <p className="font-serif text-xs text-gray-500">{data.location}</p>
+                </div>
 
-            <div className="flex  items-center gap-2 px-2 py-2">
-                <img src="./public/location.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
-                <p className="font-semibold text-xs text-gray-500">
-                    {data.phone}
-                </p>
             </div>
-            <div className="flex  items-center gap-2 px-2 py-2">
-                <img src="./public/location.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
-                <p className="font-serif text-xs text-gray-500">{data.location}</p>
-            </div>
-
         </div>
     )
 }
@@ -94,14 +102,60 @@ export function Work({ data }) {
                                 {item.position}
 
                             </div>
-                                <div>
-                                    <ul class="list-disc pl-5">
+                            <div>
+                                <ul class="list-disc pl-5">
 
-                                        {item.myDuty.map((vlue,valueIndex) =>
-                                            <li className="list-disc" key={valueIndex}>{vlue}</li>
-                                        )}
-                                        </ul>
+                                    {item.myDuty.map((vlue, valueIndex) =>
+                                        <li className="list-disc" key={valueIndex}>{vlue}</li>
+                                    )}
+                                </ul>
+                            </div>
+                        </div>
+                    ))}
+
+                </section>
+            </div>
+        </div>
+    )
+}
+
+export function Education({ data }) {
+    return (
+        <div>
+            <div>
+                <div className="bg-green-500 m-3 p-1 text-center font-bold">
+                    <p className="text-gray-600">
+                        Education
+                    </p>
+                </div>
+                <section className=" h-auto- p-2 m-3 overflow-hidden items-baseline">
+                    {data.newEdu?.slice(1).map((item, index) => (
+                        <div key={index}>
+                            <div className="flex felx-wrap justify-between">
+
+                                <div className="flex flex-wrap items-baseline gap-2">
+                                    <p className="font-extrabold text-2xl">{item.collagename} ||</p>
+                                    <span className="font-normal font-2xl">{item.location}</span>
                                 </div>
+
+                                <div className="flex flex-wrap">
+                                    <p >{item.studyStart}</p>
+                                    <span className="ml-3 mr-3">To</span>
+                                    <p>{item.studyEnd}</p>
+                                </div>
+                            </div>
+                            <div className="text-yellow-700 font-bold flex flex-col">
+                                {item.course}
+
+                            </div>
+                            <div>
+                                <ul class="list-disc pl-5">
+
+                                    {item.myEducation.map((vlue, valueIndex) =>
+                                        <li className="list-disc" key={valueIndex}>{vlue}</li>
+                                    )}
+                                </ul>
+                            </div>
                         </div>
                     ))}
 
@@ -120,11 +174,14 @@ export function ResumeOutput({ allData }) {
                 <div>
                     <p className="text-3xl font-bold text-center"> {allData.person.fullname}</p>
                 </div>
-                <Heading data={allData.person}></Heading>
+                <Heading data={allData.person} ig={allData.img}></Heading>
                 <hr className="m-4" />
                 <ProfessionalSummary data={allData.profession}></ProfessionalSummary>
                 <SkillUi data={allData.skill}></SkillUi>
                 <Work data={allData.exp} ></Work>
+                <Education data={allData.edu}></Education>
+
+
             </div>
         </div>
     )
