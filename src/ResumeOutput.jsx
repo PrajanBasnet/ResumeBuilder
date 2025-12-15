@@ -1,3 +1,8 @@
+import email from './assets/email.svg';
+import lctImg from './assets/location.svg';
+import address from './assets/add.svg';
+
+
 
 function Heading({ data, ig }) {
     return (
@@ -11,18 +16,18 @@ function Heading({ data, ig }) {
                     />
                     </div>
                 <div className="flex  items-center gap-2 px-2 py-2">
-                    <img src="./public/email.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
+                    <img src={email} alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
                     <p className="font-serif text-xs text-gray-500">{data.email}</p>
                 </div>
 
                 <div className="flex  items-center gap-2 px-2 py-2">
-                    <img src="./public/location.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
+                    <img src={address} alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
                     <p className="font-semibold text-xs text-gray-500">
                         {data.phone}
                     </p>
                 </div>
                 <div className="flex  items-center gap-2 px-2 py-2">
-                    <img src="./public/location.svg" alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
+                    <img src={lctImg} alt="Location" height="25px" width="25px" className="bg-amber-300 rounded-2xl p-1 " />
                     <p className="font-serif text-xs text-gray-500">{data.location}</p>
                 </div>
 
