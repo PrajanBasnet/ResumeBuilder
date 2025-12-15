@@ -6,7 +6,7 @@ export function Summary({data,setData}) {
 
     const summaryStatic = {
         label:"Professional Summary",
-        height:"h-100",
+        height:" h-101",
 }
 
     return (
