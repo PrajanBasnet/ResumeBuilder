@@ -5,7 +5,9 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),tailwindcss()],
-  base:'/ResumeBuilder/'
+    base: process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? '/ResumeBuilder/'
+    : '/',
   
 } )
  
